@@ -1,0 +1,490 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*從這裡開始*/
+.header{
+    background: #ffcf00;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    background: url(https://upload.cc/i1/2020/11/04/mi7dgM.png);
+    background-size: 120px 80px;
+	width: 120px;
+	height: 80px;
+	display: block;
+	text-indent: 101%;
+	overflow: hidden;
+    white-space: nowrap;
+    margin-left: 55%;
+    margin-top: .25em;
+}
+
+.top-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-menu li a{
+    display: block;
+    padding: 2.2rem 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.top-menu li a i{
+    margin-left: 0.25em;
+    
+}
+
+.top-menu li a:hover{
+    text-decoration: underline;
+}
+
+.top-menu .bg-white{
+    background: #FCFCFC;
+}
+
+.top-menu .flip .flip-icon{
+    transform: rotate(-180deg);
+    transition: .3s;
+}
+
+.top-menu .flip .flip-icon-back{
+    transform: rotate(180deg);
+    transition: .3s;
+}
+
+/*在PC上隱藏漢堡選單*/
+.showmenu{
+	display: none;
+}
+
+
+/*社群列表*/
+.frame{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    width: 400px;
+    position: relative;
+    box-shadow: -7px -7px 20px 0px #0001,
+    -4px -4px 5px 0px #0001,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79 ,.21,.06,.81);
+    margin-right: 5%;
+    margin-top: 0.25em;
+    background-color:#e0e5ec;
+}
+
+.btn{
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    background: #e0e5ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-shadow: -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79 ,.21,.06,.81);
+    transition: all 0.25s ease;
+    font-size: 15px;
+    color: rgba(42, 52, 84, 1);
+    text-decoration: none;
+}
+
+.box:active{
+    box-shadow: 4px 4px 6px 0px rgba(255, 255, 255, 0.5),
+                -4px -4px 6px 0px  rgba(116, 125, 136, 0.2),
+                inset -4px -4px 6px 0px  rgba(255, 255, 255, 0.5),
+                inset 4px 4px 6px 0px  rgba(116, 125, 136, 0.3);
+}
+
+.btn:hover{
+    transform: scale(1.3);
+    border-radius: 0px;
+}
+
+/*產品清單*/
+.product{
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    background: #FCFCFC;
+    z-index: 10000;
+    display: none;
+}
+
+.active{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product .product-list{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin-left: 10%;
+}
+
+.product .product-list li{
+    background: #e0e5ec;;
+    height: 8vh;
+    border-top: 1px solid gray;
+}
+
+.product .product-list li:last-child{
+    border-bottom: 1px solid gray;
+}
+
+.product .product-list li:hover{
+    background: #006db7;
+}
+
+.product .product-list .white-font a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.product a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.product .product-info{
+    margin-right: 5%;
+    width: 800px;
+    height: 300px;
+    background:#FCFCFC; 
+}
+
+.product-info .new-info, .popular-info{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.new-info li img, .popular-info li img{
+   width: 80%;
+}
+
+.product-info img:hover {
+    filter: drop-shadow(0px 0px 3px #000);
+    transform: scale(1.1);
+    transition: all .5s ;
+}
+
+.type-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 60%;
+}
+
+.type-info li:hover{
+    transform: scale(1.5);
+    transition: all .3s ;
+}
+
+/*產品列表切換 開始*/
+.popular-info, .type-info{
+    display: none;
+}
+
+.type-info{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.product-info .hidden{
+    display: none;
+}
+/*產品列表切換 結束*/
+
+
+/*主頁*/
+.banner{
+    width: 100%;
+    height: 90vh;
+    background-color: #ccc;
+    background: 
+      linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+      url(https://upload.cc/i1/2020/11/04/vywTnj.png) right center / auto 100%;
+
+      transform: translateZ(0);
+      background-repeat: no-repeat; 
+      animation: slider 6s linear infinite alternate; 
+      transform-origin: center center;
+}
+
+/*輪播效果*/
+  @-webkit-keyframes slider {   
+    0% {   
+        background: 
+        linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+      url(https://upload.cc/i1/2020/11/04/vywTnj.png) right center / auto 100%;   
+    }   
+    50% {   
+        background: 
+        linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+        url(https://upload.cc/i1/2020/11/08/CgIycY.jpg) right center / auto 100%;   
+
+    }     
+    100% {   
+        background: 
+        linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+        url(https://upload.cc/i1/2020/11/08/18sbzt.png) right center / auto 100%;   
+
+    }   
+}   
+@keyframes slider {   
+    0% {   
+        background: 
+        linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+        url(https://upload.cc/i1/2020/11/04/vywTnj.png) right center / auto 100%;   
+
+    }     
+    50% {   
+        background: 
+        linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+        url(https://upload.cc/i1/2020/11/08/CgIycY.jpg) right center / auto 100%;   
+
+    }   
+    100% {   
+        background:
+        linear-gradient(115deg, rgba(0,0,0,0.5) 50%,
+      transparent 50%) center center / 100% 100%,
+        url(https://upload.cc/i1/2020/11/08/18sbzt.png) right center / auto 100%;   
+
+    }   
+}  
+
+  .container{
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: auto;
+  }
+
+  .banner-txt{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+    margin-left: 10em;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .banner-txt h2{
+    font-size: 80px;
+    border-bottom: 1px solid #fff;
+    font-weight: 900;
+    padding-bottom: .3em;
+    margin-bottom: 0.3em;
+    letter-spacing: .15em;
+  }
+
+  .banner-txt h3{
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: .15em;
+  }
+
+
+
+@media (max-width: 1024px) {
+    .logo{
+        margin-left: 3%;
+    }
+    .frame{
+        margin-right: .5%;
+    }
+    .menu .top-menu li{
+        max-width: 20%;
+        white-space: nowrap;
+    }
+    .banner-txt{
+        margin: 0 auto;
+        align-items: center;
+    }
+    .banner{
+        height: 93.5vh;
+    }
+    .banner-txt h2{
+        font-size: 108px;
+    }
+    .banner-txt h3{
+        font-size: 60px;
+    }
+    .product-list a{
+        line-height: 120px;
+    }
+    .top-menu .bg-white{
+        background: #ffcf00;
+    }
+    .product-info{
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .frame{
+        display: none;
+    }
+    .top-menu{
+        margin-right: 10%;
+    }
+    .product-list a{
+        line-height: 80px;
+    }
+}
+
+  @media (max-width: 767px) {
+    .logo{
+        margin-bottom: 3%;
+    }
+    .top-menu{
+		/*隱藏選單開始*/
+		max-height: 0px;
+		overflow: hidden;
+		/*隱藏選單結束*/
+		transition: max-height 2s;
+		/*絕對定位疊在網頁上*/
+		position: absolute;
+        z-index: 100;
+        top: 12%;
+        left: 0;
+		right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        margin: 0;
+    }
+	.top-menu li a{
+		transition: all 1s;
+        font-size: 20px;
+	}
+	.showmenu{
+		display: block;
+        margin: auto 2em;
+        font-size: 24px;
+        color: black;
+    }
+    /*jQ點擊後動態在 body 加上 class */
+	.menu-show .top-menu{
+		max-height: 500px
+    }
+    .product-list {
+        width: 100%;
+    }
+    .product-info{
+        display: none;
+    }
+    .product{
+        height: 60%;
+    }
+    .product-list{
+        position: absolute; 
+        left: 0;
+		right: 0;
+    }
+    .product-list li{
+        width: 440px;
+    }
+    .banner-txt h2{
+        font-size: 72px;
+    }
+    .banner-txt h3{
+        font-size: 48px;
+    }
+    
+}
+
+
+
+
+
+
